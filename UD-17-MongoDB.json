@@ -1,0 +1,91 @@
+use ejercicio1
+
+db.createCollection('Fabricantes')
+db.createCollection('Articulos')
+
+db.Fabricantes.insertMany([{codigo:001,nombre:'MSI'},{codigo:002,nombre:'Razer'},{codigo:003,nombre:'Newskill'}]);
+db.Articulos.insertMany([{codigo:1111,nombre:'Tarjeta gráfica RTX 3060 12 GB',precio:426.98,fabricante:ObjectId('635feab7ce2bb9197fe24478')},{codigo:2222,nombre:'Mouse gamer',precio:79.99,fabricante:ObjectId('635feab7ce2bb9197fe24479')},{codigo:3333,nombre:'Teclado gamer con leds',precio:45.50,fabricante:ObjectId('635feab7ce2bb9197fe2447a')}])
+
+
+use ejercicio2
+
+db.createCollection('Departamentos')
+db.createCollection('Empleados')
+
+db.Departamentos.insertMany([{codigo:0001,nombre:'Contabilidad',presupuesto:50000},{codigo:0002,nombre:'Finanzas',presupuesto:45000},{codigo:0003,nombre:'Informática',presupuesto:80000}])
+db.Empleados.insertMany([{dni:'12345678L',nombre:'Leonor',apellidos:'Gutiérrez Pérez',departamento:ObjectId('635fed83ce2bb9197fe2447e')},{dni:'45678925Y',nombre:'Alberto',apellidos:'Rodríguez Álvarez',departamento:ObjectId('635fed83ce2bb9197fe2447f')},{dni:'98765496T',nombre:'Manolo',apellidos:'Verdejo Pancho',departamento:ObjectId('635fed83ce2bb9197fe24480')}])
+
+
+use ejercicio3
+
+db.createCollection('Almacenes')
+db.createCollection('Cajas')
+
+db.Almacenes.insertMany([{codigo:0001,lugar:'Riudoms',capacidad:20000},{codigo:0002,lugar:'Santander',capacidad:50000},{codigo:0003,lugar:'Jaen',capacidad:13000}])
+db.Cajas.insertMany([{numero_referencia:'A1',contenido:'mangas',valor:100,almacen:ObjectId('635feed1ce2bb9197fe24484')},{numero_referencia:'A2',contenido:'posters',valor:30,almacen:ObjectId('635feed1ce2bb9197fe24485')},{numero_referencia:'A3',contenido:'figuras',valor:500,almacen:ObjectId('635feed1ce2bb9197fe24486')}])
+
+
+use ejercicio4
+
+db.createCollection('Peliculas')
+db.createCollection('Salas')
+
+db.Peliculas.insertMany([{codigo:0001,nombre:'Indiana Jones',edad:7},{codigo:0002,nombre:'Alien',edad:18},{codigo:0003,nombre:'James Bond',edad:15}])
+db.Cajas.insertMany([{codigo:1111,nombre:'sala 1',pelicula:ObjectId('635ff07cce2bb9197fe2448a')},{codigo:2222,nombre:'sala 2',pelicula:ObjectId('635ff07cce2bb9197fe2448b')},{codigo:3333,nombre:'sala 3',pelicula:ObjectId('635ff07cce2bb9197fe2448c')}])
+
+
+use ejercicio5
+
+db.createCollection('Despachos')
+db.createCollection('Directores')
+
+db.Despachos.insertMany([{numero:0001,capacidad:5},{numero:0002,capacidad:1},{numero:0003,capacidad:10}])
+db.Despachos.insertMany([{dni:'98658956D',nombre:'Carlos Ocelote', despacho:ObjectId('635ff182ce2bb9197fe24490')},{dni:'36524152Q',nombre:'Mangel Rogel',dni_jefe:ObjectId('635ff182ce2bb9197fe24490'),despacho:ObjectId('635ff182ce2bb9197fe24491')},{dni:'12312312R',nombre:'Ibai Llanos Galatea',dni_jefe:ObjectId('635ff182ce2bb9197fe24490'),despacho:ObjectId('635ff182ce2bb9197fe24492')}])
+
+
+use ejercicio6
+
+db.createCollection('Piezas')
+db.createCollection('Proveedores')
+db.createCollection('Suministra')
+
+db.Piezas.insertMany([{codigo:0001,nombre:'Pieza 1'},{codigo:0002,nombre:'Pieza 2'},{codigo:0003,nombre:'Pieza 3'}])
+db.Proveedores.insertMany([{id:'0001',nombre:'Proveedor 1'},{id:'0002',nombre:'Proveedor 2'},{id:'0003',nombre:'Proveedor 3'}])
+db.Suministra.insertMany([{codigo_pieza:ObjectId('635ffc68ce2bb9197fe24496'),id_proveedor:ObjectId('635ffc88ce2bb9197fe24499'),precio:4},{codigo_pieza:ObjectId('635ffc68ce2bb9197fe24497'),id_proveedor:ObjectId('635ffc88ce2bb9197fe2449a'),precio:13},{codigo_pieza:ObjectId('635ffc68ce2bb9197fe24498'),id_proveedor:ObjectId('635ffc88ce2bb9197fe2449b'),precio:45}])
+
+
+use ejercicio7
+
+db.createCollection('Cajeros')
+db.createCollection('Productos')
+db.createCollection('Maquinas_Registradoras')
+db.createCollection('Venta')
+
+db.Cajeros.insertMany([{codigo:1,nom_apels:'Cajero1'},{codigo:2,nom_apels:'Cajero2'},{codigo:3,nom_apels:'Cajero3'}])
+db.Productos.insertMany([{codigo:1,nombre:'Producto1',precio:20},{codigo:2,nombre:'Producto2',precio:15},{codigo:3,nombre:'Producto3',precio:5}])
+db.Maquinas_Registradoras.insertMany([{codigo:1,piso:0},{codigo:2,piso:1},{codigo:3,piso:2}])
+db.Venta.insertMany([{cajero:ObjectId('635ffebcce2bb9197fe2449f'),maquina:ObjectId('635fffa8ce2bb9197fe244a5'),prodcuto:ObjectId('635fff37ce2bb9197fe244a2')},{cajero:ObjectId('635ffebcce2bb9197fe2449f'),maquina:ObjectId('635fffa8ce2bb9197fe244a6'),prodcuto:ObjectId('635fff37ce2bb9197fe244a3')},{cajero:ObjectId('635ffebcce2bb9197fe244a1'),maquina:ObjectId('635fffa8ce2bb9197fe244a7'),prodcuto:ObjectId('635fff37ce2bb9197fe244a4')}])
+
+
+use ejercicio8
+
+db.createCollection('Facultad')
+db.createCollection('Investigadores')
+db.createCollection('Equipos')
+db.createCollection('Reserva')
+
+db.Facultad.insertMany([{codigo:1,nombre:'Facultad1'},{codigo:2,nombre:'Facultad2'},{codigo:3,nombre:'Facultad3'},{codigo:4,nombre:'Facultad4'},{codigo:5,nombre:'Facultad5'},{codigo:6,nombre:'Facultad6'}])
+db.Investigadores.insertMany([{dni:'12345678H',nombreapels:'Investigador1',facultad:ObjectId('63600226ce2bb9197fe244ab')},{dni:'32165487G',nombreapels:'Investigador2',prodcuto:ObjectId('63600226ce2bb9197fe244ac')},{dni:'98798787F',nombreapels:'Investigador3',prodcuto:ObjectId('63600226ce2bb9197fe244ad')}])
+db.Equipos.insertMany([{numserie:'1',nombre:'Equipo1',facultad:ObjectId('63600226ce2bb9197fe244ae')},{numserie:'2',nombre:'Equipo2',prodcuto:ObjectId('63600226ce2bb9197fe244af')},{numserie:'3',nombre:'Equipo3',prodcuto:ObjectId('63600226ce2bb9197fe244b0')}])
+db.Reserva.insertMany([{dni:ObjectId('63603790ce2bb9197fe244b1'),numserie:ObjectId('63603864ce2bb9197fe244b4'),comienzo:new Date("2022-05-13"),fin:new Date("2022-06-13")},{dni:ObjectId('63603790ce2bb9197fe244b2'),numserie:ObjectId('63603864ce2bb9197fe244b5'),comienzo:new Date("2022-05-13"),fin:new Date("2022-06-13")},{dni:ObjectId('63603790ce2bb9197fe244b3'),numserie:ObjectId('63603864ce2bb9197fe244b6'),comienzo:new Date("2022-05-13"),fin:new Date("2022-06-13")}])
+
+
+use ejercicio9
+
+db.createCollection('Cientificos')
+db.createCollection('Proyecto')
+db.createCollection('Asignado_A')
+
+db.Cientificos.insertMany([{dni:'12345678A',nombreapels:'Investigador1'},{dni:'32165498B',nombreapels:'Investigador2'},{dni:'98765421C',nombreapels:'Investigador3'}])
+db.Proyecto.insertMany([{id:'A',nombre:'Proyecte1',horas:20},{id:'B',nombre:'Proyecto2',horas:25},{id:'C',nombre:'Proyecto3',horas:40}])
+db.Asignado_A.insertMany([{cientifico:ObjectId('63603a48ce2bb9197fe244ba'),proyecto:ObjectId('63603a8bce2bb9197fe244bd')},{cientifico:ObjectId('63603a48ce2bb9197fe244bb'),proyecto:ObjectId('63603a8bce2bb9197fe244be')},{cientifico:ObjectId('63603a48ce2bb9197fe244bc'),proyecto:ObjectId('63603a8bce2bb9197fe244bf')}])
